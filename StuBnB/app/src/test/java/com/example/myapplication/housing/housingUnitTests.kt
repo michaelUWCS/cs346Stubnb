@@ -1,6 +1,5 @@
 package com.example.myapplication.housing
 
-import com.example.myapplication.data.housing.HousingRepository
 import com.example.myapplication.models.Housing
 import org.junit.Assert.assertEquals
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.example.myapplication.views
+package com.example.myapplication.views.account
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,9 +14,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.myapplication.R
 import com.example.myapplication.components.*
-import com.example.myapplication.data.LoginEvent
-import com.example.myapplication.data.LoginState
-import com.example.myapplication.data.LoginViewModel
+import com.example.myapplication.data.login.LoginEvent
+import com.example.myapplication.data.login.LoginState
+import com.example.myapplication.data.login.LoginViewModel
 import com.example.myapplication.routers.Navigator
 import com.example.myapplication.routers.Screen
 

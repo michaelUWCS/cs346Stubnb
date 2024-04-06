@@ -1,4 +1,4 @@
-package com.example.myapplication.screens
+package com.example.myapplication.homeScreens
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -22,28 +22,30 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
 import com.example.myapplication.components.TwoFactorAuthentication
-import com.example.myapplication.models.Inventory
-import com.example.myapplication.routers.Inv
+import com.example.myapplication.models.Housing
+import com.example.myapplication.routers.Hos
 import com.example.myapplication.routers.Navigator
 import com.example.myapplication.routers.Screen
 import com.example.myapplication.ui.theme.poppins
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
+import java.util.*
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun InventoryList(inventories: List<Inventory>) {
+fun HousingList(housings: List<Housing>) {
 
     var selectedIndex by rememberSaveable { mutableStateOf(-1) }
     var text by remember { mutableStateOf("") }
     var active by remember { mutableStateOf(false) }
 
     if (selectedIndex >= 0) {
-        Navigator.navigate(Screen.Inventory(inventories[selectedIndex], Inv)) // pass in the selected item
+        Navigator.navigate(Screen.House(housings[selectedIndex], Hos)) // navigator is an object
     }
 
-    Column() {
+    Column(){
         SearchBar(
             modifier = Modifier.fillMaxWidth().padding(bottom = 6.dp),
             query = text,
@@ -79,19 +81,20 @@ fun InventoryList(inventories: List<Inventory>) {
                 }
             }
         ) {
-
+            //Spacer(modifier = Modifier.height(10.dp))
         }
         Scaffold {
             LazyColumn {
-                items(inventories.size) { index ->
-                    val inventory = inventories[index]
-                    if (text == "" || text.uppercase() in inventory.name.uppercase() || text.uppercase() in inventory.category.uppercase()
-                        || text.uppercase() in inventory.condition.uppercase() || text.uppercase() in inventory.description.uppercase()
-                        || text.uppercase() in inventory.subject.uppercase()) {
+                items(housings.size) { index ->
+                    val housing = housings[index]
+                    if (text == "" || text.uppercase() in housing.name.uppercase() || text.uppercase() in housing.address.uppercase()
+                        || text.uppercase() in housing.description.uppercase() || text in housing.startDate
+                        || text in housing.endDate || text.uppercase() in housing.propertyType.uppercase()
+                        || text.uppercase() in housing.genderRestriction.uppercase()) {
                         val onItemClick = {
                             selectedIndex = index
                         }
-                        InventoryItem(inventory = inventory, onClick = onItemClick)
+                        HousingItem(housing = housing, onClick = onItemClick)
                     }
                 }
                 item { Spacer(modifier = Modifier.height(100.dp)) }
@@ -100,8 +103,9 @@ fun InventoryList(inventories: List<Inventory>) {
     }
 
 }
+
 @Composable
-fun InventoryItem(inventory: Inventory, onClick: () -> Unit, delete: Boolean = false) {
+fun HousingItem(housing: Housing, onClick: () -> Unit, delete: Boolean = false) {
     var showDeleteConfirmationDialog by remember { mutableStateOf(false) }
     Column(
         modifier = Modifier
@@ -109,7 +113,7 @@ fun InventoryItem(inventory: Inventory, onClick: () -> Unit, delete: Boolean = f
             .fillMaxWidth()
             .clickable(onClick = onClick)
     ) {
-        val imageUrl = inventory.imageLinks.firstOrNull()
+        val imageUrl = housing.imageLinks.firstOrNull()
         val painter: Painter = rememberImagePainter(
             data = imageUrl,
             builder = {
@@ -126,6 +130,7 @@ fun InventoryItem(inventory: Inventory, onClick: () -> Unit, delete: Boolean = f
             Box(
                 modifier = Modifier.height(400.dp)
             ) {
+                // Image
                 Image(
                     painter = painter,
                     contentDescription = "Inventory Picture",
@@ -145,15 +150,19 @@ fun InventoryItem(inventory: Inventory, onClick: () -> Unit, delete: Boolean = f
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Column {
+                        val oldDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                        val newDateFormat = SimpleDateFormat("MMM yyyy", Locale.getDefault())
                         Text(
-                            text = inventory.name,
+                            text = "$%.2f".format(housing.price),
                             color = Color.Black,
                             fontSize = 20.sp,
                             fontFamily = poppins,
                             fontWeight = FontWeight.SemiBold
                         )
                         Text(
-                            text = "$%.2f".format(inventory.price),
+                            text = newDateFormat.format(oldDateFormat.parse(housing.startDate)) + " - " + newDateFormat.format(
+                                oldDateFormat.parse(housing.endDate)
+                            ),
                             color = Color.Black,
                             fontSize = 16.sp,
                             fontFamily = poppins,
@@ -181,7 +190,7 @@ fun InventoryItem(inventory: Inventory, onClick: () -> Unit, delete: Boolean = f
         TwoFactorAuthentication(
             onDismissRequest = { showDeleteConfirmationDialog = false },
             onConfirmation = {
-                deleteInventory(inventory.userId, inventory.name, inventory.timeStamp)
+                deleteHousing(housing.userId, housing.name, housing.timeStamp)
                 showDeleteConfirmationDialog = false
              },
             dialogTitle = "Are you sure you want to delete this listing?",
@@ -192,9 +201,9 @@ fun InventoryItem(inventory: Inventory, onClick: () -> Unit, delete: Boolean = f
     }
 }
 
-private fun deleteInventory(userId:String, listingId: String, timeStamp: String) {
+private fun deleteHousing(userId:String, listingId: String, timeStamp: String) {
     val database = FirebaseDatabase.getInstance()
-    val myRef: DatabaseReference = database.getReference("inventory").child(userId).child("${listingId}_${timeStamp}")
+    val myRef: DatabaseReference = database.getReference("housing").child(userId).child("${listingId}_${timeStamp}")
     myRef.removeValue()
         .addOnSuccessListener {
             Navigator.navigate(Screen.HomeProfile)

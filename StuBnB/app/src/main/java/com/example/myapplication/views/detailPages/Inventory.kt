@@ -26,7 +26,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.example.myapplication.components.BackButton
 import com.example.myapplication.components.DisplayHeartButton
-import com.example.myapplication.data.LoginViewModel
+import com.example.myapplication.data.login.LoginViewModel
 import com.example.myapplication.data.repositories.MessagingRepository
 import com.example.myapplication.models.Housing
 import com.example.myapplication.models.Inventory

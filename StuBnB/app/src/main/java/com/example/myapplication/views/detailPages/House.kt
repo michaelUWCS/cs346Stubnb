@@ -1,7 +1,6 @@
 package com.example.myapplication.views.detailPages
 
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -29,7 +28,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.example.myapplication.components.BackButton
 import com.example.myapplication.components.DisplayHeartButton
-import com.example.myapplication.data.LoginViewModel
+import com.example.myapplication.data.login.LoginViewModel
 import com.example.myapplication.data.repositories.MessagingRepository
 import com.example.myapplication.models.Housing
 import com.example.myapplication.routers.Hos

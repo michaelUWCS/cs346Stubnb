@@ -1,6 +1,7 @@
 package com.example.myapplication.data.repositories
 
 
+import com.example.myapplication.data.inventory.InventoryCallback
 import com.example.myapplication.models.Inventory
 
 interface IInventoryRepository {

@@ -2,7 +2,7 @@ package com.example.myapplication.data.wishList
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.myapplication.data.LoginViewModel
+import com.example.myapplication.data.login.LoginViewModel
 import com.example.myapplication.models.Housing
 import com.example.myapplication.models.Inventory
 import com.google.firebase.database.DataSnapshot

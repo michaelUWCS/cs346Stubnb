@@ -1,4 +1,4 @@
-package com.example.myapplication.views
+package com.example.myapplication.views.uploading
 
 
 import android.net.Uri
@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.myapplication.R
 import com.example.myapplication.components.*
-import com.example.myapplication.data.LoginViewModel
+import com.example.myapplication.data.login.LoginViewModel
 import com.example.myapplication.data.inventory.UploadInventoryEvent
 import com.example.myapplication.data.inventory.UploadInventoryState
 import com.example.myapplication.data.inventory.UploadInventoryViewModel

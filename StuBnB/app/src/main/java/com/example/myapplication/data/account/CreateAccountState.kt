@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.myapplication.data.account
 
 data class CreateAccountState (
     var name: String = "",

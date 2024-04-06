@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.myapplication.data.account
 
 sealed class CreateAccountEvent {
     data class NameChange(val name: String): CreateAccountEvent()

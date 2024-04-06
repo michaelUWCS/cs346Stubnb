@@ -1,5 +1,5 @@
 
-package com.example.myapplication.screens
+package com.example.myapplication.homeScreens
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height

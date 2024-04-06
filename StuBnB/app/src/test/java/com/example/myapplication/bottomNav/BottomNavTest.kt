@@ -6,8 +6,8 @@ import androidx.compose.material.icons.outlined.*
 import org.junit.Assert.*
 import org.junit.Test
 import androidx.compose.runtime.mutableStateOf
-import com.example.myapplication.screens.BottomNavigationItem
-import com.example.myapplication.screens.BottomNavigationList
+import com.example.myapplication.homeScreens.BottomNavigationItem
+import com.example.myapplication.homeScreens.BottomNavigationList
 
 class bottomNavTest {
     @Test

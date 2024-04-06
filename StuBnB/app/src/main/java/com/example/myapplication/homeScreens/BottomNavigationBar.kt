@@ -1,4 +1,4 @@
-package com.example.myapplication.screens
+package com.example.myapplication.homeScreens
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material.icons.Icons
@@ -10,18 +10,17 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.myapplication.data.HomeViewModel
-import com.example.myapplication.data.LoginViewModel
+import com.example.myapplication.data.login.LoginViewModel
 import com.example.myapplication.data.housing.HousingCallback
-import com.example.myapplication.data.housing.HousingRepository
-import com.example.myapplication.data.repositories.InventoryCallback
+import com.example.myapplication.data.repositories.HousingRepository
+import com.example.myapplication.data.inventory.InventoryCallback
 import com.example.myapplication.data.repositories.InventoryRepository
 import com.example.myapplication.models.Housing
 import com.example.myapplication.models.Inventory
 import com.example.myapplication.models.WishList
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.example.myapplication.ui.theme.poppins
-import com.example.myapplication.views.Inbox
+import com.example.myapplication.views.chat.Inbox
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.myapplication.homeScreens
 
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.models.WishList

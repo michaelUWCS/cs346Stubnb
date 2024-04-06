@@ -1,4 +1,4 @@
-package com.example.myapplication.views
+package com.example.myapplication.views.account
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,9 +13,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.myapplication.R
 import com.example.myapplication.components.*
-import com.example.myapplication.data.CreateAccountEvent
-import com.example.myapplication.data.CreateAccountState
-import com.example.myapplication.data.CreateAccountViewModel
+import com.example.myapplication.data.account.CreateAccountEvent
+import com.example.myapplication.data.account.CreateAccountState
+import com.example.myapplication.data.account.CreateAccountViewModel
 import com.example.myapplication.routers.Navigator
 import com.example.myapplication.routers.Screen
 

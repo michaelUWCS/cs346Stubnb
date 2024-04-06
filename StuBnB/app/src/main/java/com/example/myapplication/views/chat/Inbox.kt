@@ -1,4 +1,4 @@
-package com.example.myapplication.views
+package com.example.myapplication.views.chat
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -22,13 +22,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
 import com.example.myapplication.R
-import com.example.myapplication.data.LoginViewModel
+import com.example.myapplication.data.login.LoginViewModel
 import com.example.myapplication.data.repositories.MessagingRepository
 import com.example.myapplication.models.ChatMessage
 import com.example.myapplication.routers.Navigator
 import com.example.myapplication.routers.Screen
-import com.example.myapplication.screens.getNameOfUser
-import com.example.myapplication.screens.getProfilePic
+import com.example.myapplication.homeScreens.getNameOfUser
+import com.example.myapplication.homeScreens.getProfilePic
 
 @Composable @Preview
 fun Inbox(loginViewModel: LoginViewModel = viewModel()) {

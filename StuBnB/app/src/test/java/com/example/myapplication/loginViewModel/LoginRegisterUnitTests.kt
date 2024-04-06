@@ -1,9 +1,9 @@
 package com.example.myapplication.loginViewModel
 
-import com.example.myapplication.data.CreateAccountEvent
-import com.example.myapplication.data.CreateAccountViewModel
-import com.example.myapplication.data.LoginEvent
-import com.example.myapplication.data.LoginViewModel
+import com.example.myapplication.data.account.CreateAccountEvent
+import com.example.myapplication.data.account.CreateAccountViewModel
+import com.example.myapplication.data.login.LoginEvent
+import com.example.myapplication.data.login.LoginViewModel
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth

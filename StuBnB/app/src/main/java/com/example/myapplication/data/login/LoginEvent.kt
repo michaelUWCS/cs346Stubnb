@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.myapplication.data.login
 
 sealed class LoginEvent {
     data class EmailChange(val email: String): LoginEvent()

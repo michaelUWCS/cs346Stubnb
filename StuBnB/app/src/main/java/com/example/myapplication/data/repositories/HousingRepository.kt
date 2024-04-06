@@ -1,6 +1,8 @@
-package com.example.myapplication.data.housing
+package com.example.myapplication.data.repositories
 
 import android.util.Log
+import com.example.myapplication.data.housing.HousingCallback
+import com.example.myapplication.data.housing.IHousingRepository
 import com.example.myapplication.models.Housing
 import com.google.firebase.database.*
 

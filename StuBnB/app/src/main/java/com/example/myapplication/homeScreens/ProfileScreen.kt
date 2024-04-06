@@ -1,4 +1,4 @@
-package com.example.myapplication.screens
+package com.example.myapplication.homeScreens
 import android.net.Uri
 import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -26,12 +26,11 @@ import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
 import com.example.myapplication.R
 import com.example.myapplication.components.ActionButton
-import com.example.myapplication.data.HomeViewModel
-import com.example.myapplication.data.LoginState
-import com.example.myapplication.data.LoginViewModel
+import com.example.myapplication.data.login.LoginState
+import com.example.myapplication.data.login.LoginViewModel
 import com.example.myapplication.data.housing.HousingCallback
-import com.example.myapplication.data.housing.HousingRepository
-import com.example.myapplication.data.repositories.InventoryCallback
+import com.example.myapplication.data.repositories.HousingRepository
+import com.example.myapplication.data.inventory.InventoryCallback
 import com.example.myapplication.data.repositories.InventoryRepository
 import com.example.myapplication.models.Housing
 import com.example.myapplication.models.Inventory

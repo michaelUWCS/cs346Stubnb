@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.myapplication.data.account
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel

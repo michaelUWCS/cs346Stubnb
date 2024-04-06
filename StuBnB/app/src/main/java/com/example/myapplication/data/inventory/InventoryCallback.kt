@@ -1,4 +1,4 @@
-package com.example.myapplication.data.repositories
+package com.example.myapplication.data.inventory
 
 import com.example.myapplication.models.Inventory
 
