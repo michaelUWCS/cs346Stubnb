@@ -11,10 +11,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.example.myapplication.homeScreens.getNameOfUser
-import com.example.myapplication.views.*
 import com.example.myapplication.views.account.CreateAccount
 import com.example.myapplication.views.account.Login
 import com.example.myapplication.views.chat.ChatBoxWrapper
+import com.example.myapplication.views.detailPages.Home
 import com.example.myapplication.views.detailPages.House
 import com.example.myapplication.views.detailPages.Inventory
 import com.example.myapplication.views.uploading.UploadHousing

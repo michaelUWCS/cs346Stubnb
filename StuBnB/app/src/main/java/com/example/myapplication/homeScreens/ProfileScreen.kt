@@ -31,6 +31,7 @@ import com.example.myapplication.data.login.LoginViewModel
 import com.example.myapplication.data.housing.HousingCallback
 import com.example.myapplication.data.repositories.HousingRepository
 import com.example.myapplication.data.inventory.InventoryCallback
+import com.example.myapplication.data.login.HomeViewModel
 import com.example.myapplication.data.repositories.InventoryRepository
 import com.example.myapplication.models.Housing
 import com.example.myapplication.models.Inventory
