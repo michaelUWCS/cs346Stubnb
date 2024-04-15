@@ -4,7 +4,7 @@ Product description: StuBnB is a mobile Android app whose main users are univers
 
 Project proposal (includes defined user, personas, problem identification, problem solution): https://git.uwaterloo.ca/j556xu/team-7/-/wikis/Project-Proposal
 
-Screenshots (more screenshots can be found in User Documentation -> Final Prototype):
+Screenshots (more screenshots can be found in Design Documentation -> Final Prototype):
 ![alternate text](Screenshot_2024-03-27_220318.png) ![alternate text](Screenshot_2024-03-27_221036.png)
 
 User documentation: https://git.uwaterloo.ca/j556xu/team-7/-/wikis/User-Documentation
